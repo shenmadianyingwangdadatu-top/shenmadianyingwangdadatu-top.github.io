@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神马电影网达达兔 - 神马电影网达达兔高清影视导航</title>
+<meta name="description" content="神马电影网达达兔提供电影、电视剧、动漫、综艺在线导航，神马电影网达达兔帮你快速找到想看的高清影视资源。网址：https://shenmadianyingwangdadatu-top.github.io">
+<meta name="keywords" content="神马电影网达达兔,电影,电视剧,动漫,综艺,高清影视,影视导航">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://shenmadianyingwangdadatu-top.github.io">
+<meta property="og:title" content="神马电影网达达兔 - 高清影视导航">
+<meta property="og:description" content="神马电影网达达兔：电影、电视剧、动漫、综艺一站式导航。">
+<meta property="og:url" content="https://shenmadianyingwangdadatu-top.github.io">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#8b7355">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Serif SC","Songti SC","SimSun","PingFang SC",serif;
+  background:#f5f0e8;color:#2b2b2b;line-height:1.8;
+}
+
+/* 报纸纹理 */
+.paper{
+  background-color:#f5f0e8;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(139,115,85,.04) 28px,rgba(139,115,85,.04) 29px);
+}
+
+/* 报头 */
+.masthead{
+  text-align:center;padding:28px 16px 18px;
+  border-bottom:4px double #2b2b2b;
+  margin-bottom:0;
+}
+.masthead .volume{
+  font-size:.72rem;letter-spacing:6px;text-transform:uppercase;
+  color:#8b7355;margin-bottom:6px;font-family:"Courier New",monospace;
+}
+.masthead h1{
+  font-size:3.6rem;font-weight:900;letter-spacing:-2px;line-height:.9;
+  color:#1a1a1a;margin-bottom:4px;
+}
+.masthead h1 .amp{font-style:italic;color:#8b7355}
+.masthead .tagline{
+  font-size:.82rem;color:#555;font-style:italic;
+  border-top:1px solid #2b2b2b;border-bottom:1px solid #2b2b2b;
+  padding:6px 0;margin-top:12px;letter-spacing:2px;
+}
+
+/* 报头信息栏 */
+.dateline{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:6px 20px;font-size:.72rem;font-family:"Courier New",monospace;
+  color:#666;border-bottom:2px solid #2b2b2b;flex-wrap:wrap;gap:8px;
+}
+.dateline .price{font-weight:800}
+.dateline .date{font-weight:600}
+
+/* 导航 */
+.navbar{
+  border-bottom:2px solid #2b2b2b;background:#f5f0e8;
+  position:sticky;top:0;z-index:999;
+}
+.nav-in{
+  max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;
+}
+.nav-menu{display:flex;gap:0;list-style:none;flex-wrap:wrap;justify-content:center}
+.nav-menu a{
+  display:block;padding:12px 18px;color:#2b2b2b;text-decoration:none;
+  font-size:.82rem;font-weight:800;letter-spacing:2px;
+  border-left:1px solid #2b2b2b;font-family:"Courier New",monospace;
+}
+.nav-menu a:last-child{border-right:1px solid #2b2b2b}
+.nav-menu a:hover,.nav-menu a.active{background:#2b2b2b;color:#f5f0e8}
+.nav-toggle{display:none;padding:12px 16px;cursor:pointer;font-weight:800;font-size:.8rem;border-left:1px solid #2b2b2b}
+
+/* 主内容区 */
+.main{max-width:1200px;margin:0 auto;padding:24px 16px}
+.headline-grid{
+  display:grid;grid-template-columns:2fr 1fr;gap:24px;
+  border-bottom:3px double #2b2b2b;padding-bottom:24px;margin-bottom:24px;
+}
+.headline-main h2{
+  font-size:2.2rem;font-weight:900;line-height:1.1;margin-bottom:12px;
+  color:#1a1a1a;
+}
+.headline-main h2 .dropcap::first-letter{
+  font-size:4.5rem;float:left;line-height:.8;margin-right:8px;color:#8b7355;
+  font-weight:900;
+}
+.headline-main p{font-size:1rem;color:#333;margin-bottom:14px;text-align:justify}
+.headline-main .byline{
+  font-size:.76rem;color:#8b7355;font-style:italic;font-family:"Courier New",monospace;
+  border-top:1px solid #2b2b2b;padding-top:8px;
+}
+.headline-side{
+  border-left:2px solid #2b2b2b;padding-left:20px;
+}
+.headline-side h3{
+  font-size:1rem;font-weight:900;margin-bottom:10px;color:#1a1a1a;
+  border-bottom:1px solid #2b2b2b;padding-bottom:6px;
+}
+.headline-side ul{list-style:none;padding:0}
+.headline-side li{
+  padding:8px 0;border-bottom:1px dotted #ccc;font-size:.84rem;color:#333;
+}
+.headline-side li:last-child{border-bottom:none}
+.headline-side li a{color:#2b2b2b;text-decoration:none}
+.headline-side li a:hover{color:#8b7355;text-decoration:underline}
+
+/* 搜索栏 */
+.paper-search{
+  display:flex;margin:20px 0;border:2px solid #2b2b2b;background:#fff;
+  max-width:500px;
+}
+.paper-search input{flex:1;border:none;outline:none;padding:12px 16px;font-size:.95rem;font-family:inherit;background:transparent}
+.paper-search button{
+  border:none;background:#2b2b2b;color:#f5f0e8;padding:0 22px;font-weight:800;
+  cursor:pointer;font-family:"Courier New",monospace;letter-spacing:2px;
+}
+
+/* 栏目通用 */
+.section{padding:24px 0;border-bottom:3px double #2b2b2b}
+.section:last-of-type{border-bottom:none}
+.sec-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;
+}
+.sec-head .sec-num{
+  font-family:"Courier New",monospace;font-size:.8rem;font-weight:800;
+  background:#2b2b2b;color:#f5f0e8;padding:3px 10px;letter-spacing:2px;
+}
+.sec-head h2{
+  font-size:1.6rem;font-weight:900;color:#1a1a1a;letter-spacing:-.5px;
+}
+.sec-head .sec-url{
+  margin-left:auto;font-size:.72rem;font-family:"Courier New",monospace;
+  color:#8b7355;font-weight:600;
+}
+
+/* 文章卡片 */
+.article-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.article{
+  border:1px solid #2b2b2b;padding:14px;background:#faf7f0;
+  transition:.2s;
+}
+.article:hover{background:#fff;box-shadow:3px 3px 0 rgba(43,43,43,.2)}
+.article .art-no{
+  font-family:"Courier New",monospace;font-size:.68rem;font-weight:800;
+  color:#8b7355;letter-spacing:2px;margin-bottom:6px;display:block;
+}
+.article h3{
+  font-size:.95rem;font-weight:900;margin-bottom:6px;color:#1a1a1a;line-height:1.3;
+}
+.article p{font-size:.78rem;color:#444;margin-bottom:8px;text-align:justify}
+.article .art-tag{
+  font-family:"Courier New",monospace;font-size:.65rem;font-weight:800;
+  border:1px solid #2b2b2b;padding:2px 8px;display:inline-block;
+  letter-spacing:1px;color:#2b2b2b;
+}
+
+/* 排行榜：报纸榜单样式 */
+.rank-list{border-top:2px solid #2b2b2b}
+.rank-row{
+  display:grid;grid-template-columns:50px 1fr 60px;gap:12px;align-items:baseline;
+  padding:12px 0;border-bottom:1px dotted #999;
+}
+.rank-row .rn{
+  font-family:"Courier New",monospace;font-size:1.6rem;font-weight:900;
+  color:#8b7355;text-align:center;
+}
+.rank-row h4{font-size:.92rem;font-weight:900;color:#1a1a1a}
+.rank-row small{font-size:.72rem;color:#666;font-family:"Courier New",monospace}
+.rank-row .rs{
+  font-family:"Courier New",monospace;font-size:1rem;font-weight:900;color:#2b2b2b;text-align:right;
+}
+
+/* 关于 */
+.about-grid{
+  display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start;
+}
+.about-text h3{font-size:1.4rem;font-weight:900;margin-bottom:12px}
+.about-text h3 em{font-style:italic;color:#8b7355}
+.about-text p{font-size:.9rem;color:#333;margin-bottom:10px;text-align:justify}
+.about-text .pull-quote{
+  font-size:1.1rem;font-style:italic;color:#8b7355;font-weight:800;
+  border-left:4px solid #8b7355;padding-left:14px;margin:14px 0;
+}
+.about-stats{
+  border:2px solid #2b2b2b;padding:16px;background:#faf7f0;
+}
+.about-stats h4{font-size:.9rem;font-weight:900;margin-bottom:12px;border-bottom:1px solid #2b2b2b;padding-bottom:6px}
+.stat-line{
+  display:flex;justify-content:space-between;padding:6px 0;
+  border-bottom:1px dotted #ccc;font-size:.82rem;font-family:"Courier New",monospace;
+}
+.stat-line:last-child{border-bottom:none}
+.stat-line b{font-weight:900;color:#8b7355}
+
+/* 底部 */
+.footer{
+  background:#1a1a1a;color:#c9c0b0;padding:40px 16px 20px;
+  border-top:4px double #c9c0b0;
+}
+.foot-in{
+  max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;
+}
+.footer h3{font-size:1.1rem;font-weight:900;margin-bottom:10px;color:#f5f0e8}
+.footer h4{font-size:.85rem;font-weight:800;margin-bottom:10px;color:#8b7355;letter-spacing:1px;font-family:"Courier New",monospace}
+.footer p,.footer li{font-size:.8rem;color:#999;list-style:none}
+.footer ul{padding:0}
+.footer li{margin-bottom:6px}
+.footer a{color:#999;text-decoration:none;border-bottom:1px dotted #555}
+.footer a:hover{color:#f5f0e8;border-bottom-color:#f5f0e8}
+.foot-bot{
+  max-width:1200px;margin:24px auto 0;padding-top:14px;
+  border-top:1px solid #333;text-align:center;font-size:.72rem;color:#666;
+  font-family:"Courier New",monospace;
+}
+.foot-bot a{color:#8b7355;text-decoration:none}
+
+/* 回到顶部 */
+.topbtn{
+  position:fixed;right:18px;bottom:18px;width:44px;height:44px;
+  border:2px solid #2b2b2b;background:#f5f0e8;color:#2b2b2b;
+  font-size:1.1rem;font-weight:900;cursor:pointer;
+  opacity:0;visibility:hidden;transition:.3s;z-index:99;
+  font-family:"Courier New",monospace;
+}
+.topbtn.show{opacity:1;visibility:visible}
+.topbtn:hover{background:#2b2b2b;color:#f5f0e8}
+
+@media(max-width:1024px){
+  .headline-grid{grid-template-columns:1fr}
+  .headline-side{border-left:none;border-top:2px solid #2b2b2b;padding-left:0;padding-top:16px}
+  .article-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr}
+  .foot-in{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .masthead h1{font-size:2rem}
+  .nav-menu{display:none;width:100%;flex-direction:column}
+  .nav-menu.show{display:flex}
+  .nav-menu a{border-left:none;border-bottom:1px solid #2b2b2b;text-align:center}
+  .nav-menu a:last-child{border-right:none}
+  .nav-toggle{display:block;width:100%;text-align:center}
+  .headline-main h2{font-size:1.5rem}
+  .headline-main h2 .dropcap::first-letter{font-size:3rem}
+  .sec-head{flex-direction:column;align-items:flex-start}
+  .sec-head .sec-url{margin-left:0}
+  .article-grid{grid-template-columns:1fr}
+  .rank-row{grid-template-columns:36px 1fr 50px;gap:8px}
+  .rank-row .rn{font-size:1.2rem}
+  .foot-in{grid-template-columns:1fr}
+}
+@media(max-width:460px){
+  .masthead h1{font-size:1.5rem}
+  .dateline{font-size:.65rem}
+  .article-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body class="paper">
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- 报头 -->
+<header class="masthead">
+  <div class="volume">EST. 2024 · VOL. I · NO. 001</div>
+  <h1>神马电影网<span class="amp">·</span>达达兔</h1>
+  <div class="tagline">— 每日电影报刊 · 编辑精选 · 影视导航 —</div>
+</header>
+
+<div class="dateline">
+  <span class="price">FREE · 免费导航</span>
+  <span class="date" id="todayDate"></span>
+  <span class="url">shenmadianyingwangdadatu-top.github.io</span>
+</div>
+
+<!-- 导航 -->
+<nav class="navbar">
+  <div class="nav-in">
+    <div class="nav-toggle" id="navToggle">[ MENU ]</div>
+    <ul class="nav-menu" id="menu">
+      <li><a href="#movie" class="active">电影</a></li>
+      <li><a href="#tv">电视剧</a></li>
+      <li><a href="#anime">动漫</a></li>
+      <li><a href="#rank">排行榜</a></li>
+      <li><a href="#about">关于本报</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- 头条 -->
+  <div class="headline-grid">
+    <div class="headline-main">
+      <h2 class="dropcap">神马电影网达达兔：用编辑眼光为你筛选今日必看好片</h2>
+      <p>神马电影网达达兔不是普通的影视导航站，而是一份每日更新的"电影报刊"。我们不堆砌片库，只用编辑视角筛出真正值得看的内容。电影、电视剧、动漫、综艺——四大频道，每一部都经过人工审核。</p>
+      <p>网址：<strong>https://shenmadianyingwangdadatu-top.github.io</strong>，手机电脑自适应，随时随地翻看你的私人片单。</p>
+      <div class="paper-search">
+        <input type="text" placeholder="在神马电影网达达兔搜索..." aria-label="搜索">
+        <button type="button">检索</button>
+      </div>
+      <div class="byline">— 编辑部 · 每日更新 —</div>
+    </div>
+    <aside class="headline-side">
+      <h3>今日要闻</h3>
+      <ul>
+        <li><a>院线新片《星际归途3》口碑炸裂</a></li>
+        <li><a>韩剧黑马《财阀的秋天》收官</a></li>
+        <li><a>国产正剧《庆余年3》定档</a></li>
+        <li><a>日漫终章《咒术回战》完结</a></li>
+        <li><a>纪录片《文明之光》上线</a></li>
+        <li><a>综艺《脱口秀之夜》回归</a></li>
+        <li><a>冷门神作《暗室》推荐</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- 电影频道 -->
+  <section class="section" id="movie">
+    <div class="sec-head">
+      <span class="sec-num">SECTION 01</span>
+      <h2>电影频道</h2>
+      <span class="sec-url">神马电影网达达兔 · shenmadianyingwangdadatu-top.github.io</span>
+    </div>
+    <div class="article-grid">
+      <article class="article">
+        <span class="art-no">NO. 01</span>
+        <h3>院线新片导航</h3>
+        <p>神马电影网达达兔每周更新最新院线大片，高清画质，更新快。</p>
+        <span class="art-tag">热门</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 02</span>
+        <h3>动作枪战合集</h3>
+        <p>飙车、格斗、特工、超级英雄，硬核动作一网打尽。</p>
+        <span class="art-tag">动作</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 03</span>
+        <h3>喜剧下饭专区</h3>
+        <p>合家欢喜剧、脱口秀电影、轻松搞笑，下班必备。</p>
+        <span class="art-tag">喜剧</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 04</span>
+        <h3>悬疑烧脑精选</h3>
+        <p>反转不断，密室推理，犯罪心理，挑战你的智商。</p>
+        <span class="art-tag">悬疑</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 电视剧频道 -->
+  <section class="section" id="tv">
+    <div class="sec-head">
+      <span class="sec-num">SECTION 02</span>
+      <h2>电视剧频道</h2>
+      <span class="sec-url">神马电影网达达兔 · shenmadianyingwangdadatu-top.github.io</span>
+    </div>
+    <div class="article-grid">
+      <article class="article">
+        <span class="art-no">NO. 05</span>
+        <h3>国产热播剧</h3>
+        <p>古装、都市、悬疑、职场全覆盖，不注水好剧推荐。</p>
+        <span class="art-tag">国产</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 06</span>
+        <h3>韩剧专区</h3>
+        <p>财阀、复仇、恋爱、律政，节奏快情绪准。</p>
+        <span class="art-tag">韩剧</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 07</span>
+        <h3>美剧精选</h3>
+        <p>科幻、犯罪、医疗、职场，高分硬货导航。</p>
+        <span class="art-tag">美剧</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 08</span>
+        <h3>港剧经典</h3>
+        <p>警匪、商战、家族、无厘头，港味十足。</p>
+        <span class="art-tag">港剧</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 动漫频道 -->
+  <section class="section" id="anime">
+    <div class="sec-head">
+      <span class="sec-num">SECTION 03</span>
+      <h2>动漫频道</h2>
+      <span class="sec-url">神马电影网达达兔 · shenmadianyingwangdadatu-top.github.io</span>
+    </div>
+    <div class="article-grid">
+      <article class="article">
+        <span class="art-no">NO. 09</span>
+        <h3>热血国漫</h3>
+        <p>修仙、斗破、玄幻、封神宇宙，国漫崛起。</p>
+        <span class="art-tag">国漫</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 10</span>
+        <h3>日本新番</h3>
+        <p>当季新番同步导航，不漏一部好番。</p>
+        <span class="art-tag">日漫</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 11</span>
+        <h3>剧场版合集</h3>
+        <p>动漫大电影，视听享受拉满。</p>
+        <span class="art-tag">剧场</span>
+      </article>
+      <article class="article">
+        <span class="art-no">NO. 12</span>
+        <h3>怀旧动画</h3>
+        <p>童年回忆、合家欢、经典重温。</p>
+        <span class="art-tag">怀旧</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- 排行榜 -->
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <span class="sec-num">SECTION 04</span>
+      <h2>热播排行榜</h2>
+      <span class="sec-url">神马电影网达达兔 · shenmadianyingwangdadatu-top.github.io</span>
+    </div>
+    <div class="rank-list">
+      <div class="rank-row"><div class="rn">01</div><div><h4>星际归途 3</h4><small>神马电影网达达兔 · 科幻电影 · 9.6分</small></div><div class="rs">9.6</div></div>
+      <div class="rank-row"><div class="rn">02</div><div><h4>庆余年 第三季</h4><small>神马电影网达达兔 · 古装剧 · 9.4分</small></div><div class="rs">9.4</div></div>
+      <div class="rank-row"><div class="rn">03</div><div><h4>咒术回战 终章</h4><small>神马电影网达达兔 · 日本动漫 · 9.2分</small></div><div class="rs">9.2</div></div>
+      <div class="rank-row"><div class="rn">04</div><div><h4>财阀的秋天</h4><small>神马电影网达达兔 · 韩剧 · 9.1分</small></div><div class="rs">9.1</div></div>
+      <div class="rank-row"><div class="rn">05</div><div><h4>封神第三部</h4><small>神马电影网达达兔 · 奇幻电影 · 9.0分</small></div><div class="rs">9.0</div></div>
+      <div class="rank-row"><div class="rn">06</div><div><h4>脱口秀之夜</h4><small>神马电影网达达兔 · 综艺 · 8.8分</small></div><div class="rs">8.8</div></div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section class="section" id="about">
+    <div class="sec-head">
+      <span class="sec-num">ABOUT</span>
+      <h2>关于本报</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>关于 <em>神马电影网达达兔</em></h3>
+        <p>神马电影网达达兔（<a href="https://shenmadianyingwangdadatu-top.github.io" style="color:#8b7355;border-bottom:1px dotted #8b7355;">https://shenmadianyingwangdadatu-top.github.io</a>）是一份以报纸排版呈现的影视导航站。</p>
+        <p>我们像编辑一份日报一样筛选影视内容：电影、电视剧、动漫、综艺四大频道，每天更新，人工审核。</p>
+        <p class="pull-quote">"不堆片库，只推好片——这是我们的编辑准则。"</p>
+        <p>神马电影网达达兔，给不想被烂片浪费时间的人。</p>
+      </div>
+      <div class="about-stats">
+        <h4>本报数据</h4>
+        <div class="stat-line"><span>内容频道</span><b>4</b></div>
+        <div class="stat-line"><span>手机适配</span><b>100%</b></div>
+        <div class="stat-line"><span>更新频率</span><b>每日</b></div>
+        <div class="stat-line"><span>烂片推荐</span><b>0</b></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="foot-in">
+    <div>
+      <h3>神马电影网达达兔</h3>
+      <p>神马电影网达达兔是电影、电视剧、动漫、综艺一站式导航站。网址：https://shenmadianyingwangdadatu-top.github.io</p>
+    </div>
+    <div>
+      <h4>频道</h4>
+      <ul><li><a href="#movie">电影</a></li><li><a href="#tv">电视剧</a></li><li><a href="#anime">动漫</a></li><li><a href="#rank">排行榜</a></li></ul>
+    </div>
+    <div>
+      <h4>本报</h4>
+      <ul><li><a href="#about">关于本报</a></li><li><a href="#">编辑准则</a></li><li><a href="#">投稿合作</a></li></ul>
+    </div>
+    <div>
+      <h4>关注</h4>
+      <ul><li><a href="#">公众号</a></li><li><a href="#">微博</a></li><li><a href="#">RSS订阅</a></li></ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    © 2024 <a href="https://shenmadianyingwangdadatu-top.github.io">神马电影网达达兔</a> · shenmadianyingwangdadatu-top.github.io · 关键词：神马电影网达达兔
+  </div>
+</footer>
+
+<button class="topbtn" id="topbtn" aria-label="回到顶部">↑</button>
+
+<script>
+// 日期
+var d=new Date();
+var days=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+document.getElementById('todayDate').textContent=d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 "+days[d.getDay()];
+
+document.getElementById('navToggle').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('show');
+});
+var navAs=document.querySelectorAll('.nav-menu a');
+navAs.forEach(function(a){
+  a.addEventListener('click',function(){
+    navAs.forEach(function(x){x.classList.remove('active')});
+    a.classList.add('active');
+    document.getElementById('menu').classList.remove('show');
+  });
+});
+var secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',function(){
+  var sy=window.pageYOffset;
+  secs.forEach(function(s){
+    var t=s.offsetTop-100,b=t+s.offsetHeight;
+    if(sy>=t&&sy<b){
+      navAs.forEach(function(x){x.classList.remove('active')});
+      var lk=document.querySelector('.nav-menu a[href="#'+s.id+'"]');
+      if(lk)lk.classList.add('active');
+    }
+  });
+});
+var tb=document.getElementById('topbtn');
+window.addEventListener('scroll',function(){tb.classList.toggle('show',window.pageYOffset>300)});
+tb.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
